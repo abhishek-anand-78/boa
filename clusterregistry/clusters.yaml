@@ -18,3 +18,10 @@ metadata:
   name: gke-cluster
   labels:
     environment: asm
+    
+kind: Cluster
+apiVersion: clusterregistry.k8s.io/v1alpha1
+metadata:
+  name: gke-cluster-us
+  labels:
+    environment: asm
