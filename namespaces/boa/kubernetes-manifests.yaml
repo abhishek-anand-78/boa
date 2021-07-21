@@ -29,7 +29,7 @@ spec:
       labels:
         app: emailservice
     spec:
-      serviceAccountName: ksa
+      serviceAccountName: default
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
@@ -85,7 +85,7 @@ spec:
       labels:
         app: checkoutservice
     spec:
-      serviceAccountName: ksa
+      serviceAccountName: default
       containers:
         - name: server
           image: gcr.io/google-samples/microservices-demo/checkoutservice:v0.2.3
@@ -154,7 +154,7 @@ spec:
       labels:
         app: recommendationservice
     spec:
-      serviceAccountName: ksa
+      serviceAccountName: default
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
@@ -263,7 +263,7 @@ spec:
       annotations:
         sidecar.istio.io/rewriteAppHTTPProbers: "true"
     spec:
-      serviceAccountName: ksa
+      serviceAccountName: default
       containers:
         - name: server
           image: gcr.io/google-samples/microservices-demo/frontend:v0.2.3
@@ -359,7 +359,7 @@ spec:
       labels:
         app: paymentservice
     spec:
-      serviceAccountName: ksa
+      serviceAccountName: default
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
@@ -409,7 +409,7 @@ spec:
       labels:
         app: productcatalogservice
     spec:
-      serviceAccountName: ksa
+      serviceAccountName: default
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
@@ -467,7 +467,7 @@ spec:
       labels:
         app: cartservice
     spec:
-      serviceAccountName: ksa
+      serviceAccountName: default
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
@@ -523,7 +523,7 @@ spec:
       annotations:
         sidecar.istio.io/rewriteAppHTTPProbers: "true"
     spec:
-      serviceAccountName: ksa
+      serviceAccountName: default
       terminationGracePeriodSeconds: 5
       restartPolicy: Always
       containers:
@@ -531,7 +531,7 @@ spec:
         image: gcr.io/google-samples/microservices-demo/loadgenerator:v0.2.3
         env:
         - name: FRONTEND_ADDR
-          value: "34.102.188.50:80"
+          value: "frontend:80"
         - name: USERS
           value: "10"
         resources:
@@ -555,7 +555,7 @@ spec:
       labels:
         app: currencyservice
     spec:
-      serviceAccountName: ksa
+      serviceAccountName: default
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
@@ -612,7 +612,7 @@ spec:
       labels:
         app: shippingservice
     spec:
-      serviceAccountName: ksa
+      serviceAccountName: default
       containers:
       - name: server
         image: gcr.io/google-samples/microservices-demo/shippingservice:v0.2.3
@@ -723,7 +723,7 @@ spec:
       labels:
         app: adservice
     spec:
-      serviceAccountName: ksa
+      serviceAccountName: default
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
