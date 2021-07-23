@@ -770,3 +770,10 @@ spec:
     port: 9555
     targetPort: 9555
 ---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: boa
+  labels:
+    env: istio
+    istio-injection: enabled
